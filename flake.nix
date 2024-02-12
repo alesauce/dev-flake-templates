@@ -1,5 +1,5 @@
 {
-  description = "Ready-made templates for easily creating flake-driven environments";
+  description = "Templates for flake-driven dev environments";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
