@@ -21,10 +21,7 @@
     nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.2311.*.tar.gz";
   };
 
-  outputs = {
-    nixpkgs,
-    ...
-  }: let
+  outputs = {nixpkgs, ...}: let
     forAllSystems = nixpkgs.lib.genAttrs [
       "aarch64-darwin"
       "aarch64-linux"
@@ -32,8 +29,9 @@
       "x86_64-linux"
     ];
   in {
-    pkgs = forAllSystems (localSystem:
-      nixpkgs.legacyPackages.${localSystem}
+    pkgs = forAllSystems (
+      localSystem:
+        nixpkgs.legacyPackages.${localSystem}
     );
   };
 }

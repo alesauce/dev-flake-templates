@@ -15,7 +15,5 @@ with self.pkgs.${system}; {
     shellHook = ''
       ${self.checks.${system}.pre-commit-check.shellHook}
     '';
-
-    packages = with self.pkgs; [ update ];
   };
 }
